@@ -7,12 +7,10 @@ function App() {
 
   return (
    
-      <div>   
         <BrowserRouter>    
          <Main/>
         </BrowserRouter>
 
-      </div>
      
   )
 }
