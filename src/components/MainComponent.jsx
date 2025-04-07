@@ -1,30 +1,24 @@
 import React from "react";
-import Header from "./HeaderComponent";
-import Footer from "./FooterComponent";
-import Login from "./LoginComponent";
-
-import About from "./AboutComponent";
-import Home from "./HomeComponent";
-import { Routes, Route, Navigate } from "react-router-dom";
+import PasswordPage from "./PasswordComponent";
+import EmailPage from "./EmailComponent";
+import { Routes, Route } from "react-router-dom";
 
 function Main() {
     return (
-        <div>
-        <Header />
-            <input type="checkbox" id="toggle" className="toggle" />
-            
-            <input type="text" />
-            <button onClick={() => { window.location.href = "/login"; }}>
-               Proceed
-            </button>
-            {/* creating and defining routes */}
+        <div px-5 py-5 className="h-screen bg-gray-100 flex flex-col items-center justify-center">
+          
+          <img src="src\assets\Gmail_icon_(2020).svg.png" className="logo w-50 h-60 " />
+          
             <Routes>
-                <Route path="/home" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="*" element={<h1>404</h1>} />
-                <Route path="/login" element={<Login />} />
+                <Route path="/login" element={<EmailPage />} />
+                <Route path="/password" element={<PasswordPage />} />
+                <Route path="/" element={<EmailPage />} />	
+                <Route path="*" element={<><h1>404</h1><p>Pabhaizika!</p></>} />
+                           
             </Routes>
-            <Footer />
+
+            
+           
         </div>
     );
 }
